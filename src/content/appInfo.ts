@@ -1,12 +1,12 @@
 export const appInfo = {
   appName: 'AvesOS',
-  companyName: 'AIBOX Vision',
-  companyNameVi: 'Công ty AIBOX Vision',
+  companyName: 'Aves',
+  companyNameVi: 'Công ty Aves',
   iosBundleId: 'tech.aves.avesos',
   androidPackage: 'com.aiboxvision.aves',
   supportEmail: 'info@aves.tech',
-  privacyEmail: 'privacy@aiboxvision.com',
-  websiteUrl: 'https://aiboxvision.com',
+  privacyEmail: 'privacy@aves.tech',
+  websiteUrl: 'https://aves.tech',
   address: '', // điền địa chỉ đăng ký kinh doanh trước khi submit store
   addressVi: '',
   effectiveDate: '2026-09-12',
