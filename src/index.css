@@ -758,12 +758,35 @@ tbody td:first-child {
   }
 
   .section {
-    break-inside: avoid;
     border: 0;
     border-top: 1px solid #d4d4d8;
     border-radius: 0;
     padding: 16px 0;
     margin: 0;
+  }
+
+  .section h2,
+  .section h3 {
+    break-after: avoid;
+  }
+
+  .section ul {
+    display: block;
+  }
+
+  .section ul li {
+    margin-bottom: 10px;
+  }
+
+  .section li,
+  .section tr,
+  .info-row {
+    break-inside: avoid;
+  }
+
+  .section p {
+    orphans: 3;
+    widows: 3;
   }
 
   .doc-intro {
