@@ -1,14 +1,38 @@
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { appInfo } from '../content/appInfo';
 import { docs } from '../content';
 import type { DocKey } from '../content';
-import type { Block } from '../content/types';
+import type { Block, Clause } from '../content/types';
 import { formatDate, useLang } from './LangContext';
+
+function ClauseList({ items }: { items: Clause[] }) {
+  return (
+    <ol className="clauses">
+      {items.map((clause, i) => (
+        <li key={i} className={clause.num ? undefined : 'bullet'}>
+          {clause.num && <span className="clause-num">{clause.num}</span>}
+          <div className="clause-body">
+            {clause.title && <strong className="clause-title">{clause.title}</strong>}
+            {clause.title && clause.text && ' '}
+            {clause.text}
+            {clause.sub && <ClauseList items={clause.sub} />}
+          </div>
+        </li>
+      ))}
+    </ol>
+  );
+}
 
 function BlockView({ block }: { block: Block }) {
   switch (block.kind) {
     case 'p':
       return <p>{block.text}</p>;
+
+    case 'h3':
+      return <h3>{block.text}</h3>;
+
+    case 'clauses':
+      return <ClauseList items={block.items} />;
 
     case 'list':
       return (
@@ -117,15 +141,20 @@ export default function DocPage({ docKey }: { docKey: DocKey }) {
         <aside className="toc">
           <h2>{t.contents}</h2>
           <ol>
-            {doc.sections.map((section) => (
-              <li key={section.id}>
-                <a
-                  href={`#${section.id}`}
-                  className={section.id === active ? 'current' : undefined}
-                >
-                  {section.title}
-                </a>
-              </li>
+            {doc.sections.map((section, i) => (
+              <Fragment key={section.id}>
+                {section.part && section.part !== doc.sections[i - 1]?.part && (
+                  <li className="toc-part">{section.part}</li>
+                )}
+                <li>
+                  <a
+                    href={`#${section.id}`}
+                    className={section.id === active ? 'current' : undefined}
+                  >
+                    {section.title}
+                  </a>
+                </li>
+              </Fragment>
             ))}
           </ol>
         </aside>
@@ -133,13 +162,18 @@ export default function DocPage({ docKey }: { docKey: DocKey }) {
         <article className="doc">
           <div className="doc-intro">{doc.intro}</div>
 
-          {doc.sections.map((section) => (
-            <section key={section.id} id={section.id} className="section">
-              <h2>{section.title}</h2>
-              {section.blocks.map((block, i) => (
-                <BlockView key={i} block={block} />
-              ))}
-            </section>
+          {doc.sections.map((section, i) => (
+            <Fragment key={section.id}>
+              {section.part && section.part !== doc.sections[i - 1]?.part && (
+                <h2 className="part-heading">{section.part}</h2>
+              )}
+              <section id={section.id} className="section">
+                <h2>{section.title}</h2>
+                {section.blocks.map((block, j) => (
+                  <BlockView key={j} block={block} />
+                ))}
+              </section>
+            </Fragment>
           ))}
 
           <div className="doc-actions">

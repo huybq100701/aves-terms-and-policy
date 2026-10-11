@@ -317,6 +317,20 @@ a {
   font-weight: 550;
 }
 
+.toc .toc-part {
+  margin: 12px 0 4px;
+  padding: 0 10px;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-muted);
+  font-weight: 650;
+}
+
+.toc .toc-part:first-child {
+  margin-top: 0;
+}
+
 .doc {
   min-width: 0;
 }
@@ -355,6 +369,85 @@ a {
 
 .section > *:last-child {
   margin-bottom: 0;
+}
+
+.section h3 {
+  margin: 22px 0 10px;
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 620;
+  color: var(--text);
+}
+
+.section h2 + h3 {
+  margin-top: 0;
+}
+
+.part-heading {
+  margin: 34px 0 14px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--label);
+  font-weight: 650;
+}
+
+.doc-intro + .part-heading {
+  margin-top: 0;
+}
+
+.clauses {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.clauses .clauses {
+  margin: 10px 0 0;
+}
+
+.clauses li {
+  display: flex;
+  gap: 10px;
+  color: var(--label);
+}
+
+.clause-num {
+  flex: none;
+  min-width: 2.4em;
+  color: var(--text);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.clause-body {
+  min-width: 0;
+  flex: 1;
+}
+
+.clause-title {
+  color: var(--text);
+  font-weight: 620;
+}
+
+.clauses li.bullet {
+  position: relative;
+  padding-left: 22px;
+}
+
+.clauses li.bullet::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 11px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tile);
+  border: 1px solid var(--border);
 }
 
 .section ul {
@@ -776,6 +869,18 @@ tbody td:first-child {
 
   .section ul li {
     margin-bottom: 10px;
+  }
+
+  .clauses {
+    display: block;
+  }
+
+  .clauses li {
+    margin-bottom: 8px;
+  }
+
+  .part-heading {
+    break-after: avoid;
   }
 
   .section li,

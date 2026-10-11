@@ -57,8 +57,11 @@ export const ui: Record<Lang, UiStrings> = {
     homeLead:
       'Các tài liệu pháp lý dành cho ứng dụng di động. Chọn tài liệu bạn muốn xem; mọi trang đều có ' +
       'sẵn bản tiếng Việt và tiếng Anh.',
-    homeTermsDesc: 'Quyền và nghĩa vụ khi sử dụng ứng dụng, quy định an toàn và giới hạn trách nhiệm.',
-    homePrivacyDesc: 'Dữ liệu chúng tôi thu thập, lý do thu thập, cách chia sẻ và quyền của bạn.',
+    homeTermsDesc:
+      'Điều kiện giao dịch chung khi sử dụng Nền tảng AVES, Dịch Vụ Trạm Sạc và Dịch Vụ Đổi Pin: ' +
+      'tài khoản, phí, thanh toán và trách nhiệm các bên.',
+    homePrivacyDesc:
+      'Chính sách bảo vệ dữ liệu cá nhân: dữ liệu được xử lý, mục đích, cách thức xử lý và quyền của bạn.',
     homeDeletionDesc: 'Hướng dẫn xóa tài khoản, danh sách dữ liệu bị xóa và dữ liệu được giữ lại.',
     read: 'Xem tài liệu',
     contactTitle: 'Cần hỗ trợ?',
@@ -86,8 +89,11 @@ export const ui: Record<Lang, UiStrings> = {
     homeLead:
       'Legal documents for the mobile application. Pick the document you need; every page is ' +
       'available in both Vietnamese and English.',
-    homeTermsDesc: 'Your rights and obligations when using the app, safety rules and liability limits.',
-    homePrivacyDesc: 'What data we collect, why, how it is shared, and what rights you have.',
+    homeTermsDesc:
+      'General terms for using the AVES Platform, the Charging Station Service and the Battery Swap ' +
+      'Service: accounts, fees, payment and each party\'s responsibilities.',
+    homePrivacyDesc:
+      'Personal data protection policy: what data is processed, why, how, and what rights you have.',
     homeDeletionDesc: 'How to delete your account, what data is erased and what is retained.',
     read: 'Read document',
     contactTitle: 'Need help?',
