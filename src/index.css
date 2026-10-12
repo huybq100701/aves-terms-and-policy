@@ -21,7 +21,7 @@
   --radius: 14px;
   --radius-sm: 10px;
   --maxw: 1120px;
-  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+  --font: 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
     Arial, sans-serif;
 
   color-scheme: light dark;
