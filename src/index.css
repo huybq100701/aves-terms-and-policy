@@ -699,6 +699,29 @@ tbody td:first-child {
   border-bottom: 1px solid var(--border);
 }
 
+.info-sub {
+  display: block;
+  margin-top: 3px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+@media (min-width: 600px) {
+  .info-rows {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .info-row.wide {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 960px) {
+  .info-rows {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 .mono {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 13.5px;

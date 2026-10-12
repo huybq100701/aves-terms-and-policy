@@ -4,10 +4,8 @@ export const appInfo = {
   companyLegalNameVi: 'Công ty Cổ phần Công nghệ và Năng lượng xanh Aves',
   companyLegalNameEn: 'Aves Technology and Green Energy Joint Stock Company', // TODO: đối chiếu tên tiếng Anh trên ĐKKD
   taxCode: '0111625399',
-  iosBundleId: 'tech.aves.avesos',
-  androidPackage: 'com.aiboxvision.aves',
+  appId: 'tech.aves.avesos', // bundle ID (iOS) và package name (Android) giống nhau
   supportEmail: 'info@aves.tech',
-  privacyEmail: 'privacy@aves.tech',
   websiteUrl: 'https://aves.tech',
   websiteDomain: 'aves.tech',
   phone: '0914 567 198', // TODO: xác nhận số hotline chính thức (comment C1886 trong file điều khoản)

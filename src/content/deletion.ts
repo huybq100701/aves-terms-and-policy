@@ -1,7 +1,7 @@
 import { appInfo } from './appInfo';
 import type { LegalDoc } from './types';
 
-const { appName, privacyEmail, supportEmail, accountDeletionDays, dataRetentionDays } = appInfo;
+const { appName, supportEmail, accountDeletionDays, dataRetentionDays } = appInfo;
 
 export const deletionVi: LegalDoc = {
   title: 'Xóa tài khoản và dữ liệu',
@@ -42,7 +42,7 @@ export const deletionVi: LegalDoc = {
         {
           kind: 'p',
           text:
-            `Nếu bạn không đăng nhập được vào ứng dụng, hãy gửi email tới ${privacyEmail} với tiêu đề ` +
+            `Nếu bạn không đăng nhập được vào ứng dụng, hãy gửi email tới ${supportEmail} với tiêu đề ` +
             '"Yêu cầu xóa tài khoản". Trong email vui lòng ghi rõ email hoặc số điện thoại đã đăng ký. ' +
             'Chúng tôi sẽ xác minh danh tính của bạn trước khi xử lý và phản hồi trong vòng 30 ngày.',
         },
@@ -145,7 +145,7 @@ export const deletionEn: LegalDoc = {
         {
           kind: 'p',
           text:
-            `If you cannot sign in, email ${privacyEmail} with the subject "Account deletion request". ` +
+            `If you cannot sign in, email ${supportEmail} with the subject "Account deletion request". ` +
             'Include the email address or phone number registered to the account. We verify your identity ' +
             'before acting and respond within 30 days.',
         },

@@ -32,8 +32,11 @@ export type UiStrings = {
   read: string;
   contactTitle: string;
   contactLead: string;
-  supportLabel: string;
-  privacyLabel: string;
+  companyLabel: string;
+  taxCodeLabel: string;
+  emailLabel: string;
+  phoneLabel: string;
+  addressLabel: string;
   appLabel: string;
   notFound: string;
   notFoundLead: string;
@@ -66,8 +69,11 @@ export const ui: Record<Lang, UiStrings> = {
     read: 'Xem tài liệu',
     contactTitle: 'Cần hỗ trợ?',
     contactLead: 'Liên hệ với chúng tôi qua các kênh dưới đây.',
-    supportLabel: 'Hỗ trợ chung',
-    privacyLabel: 'Về dữ liệu cá nhân',
+    companyLabel: 'Công ty',
+    taxCodeLabel: 'Mã số thuế:',
+    emailLabel: 'Email',
+    phoneLabel: 'Điện thoại',
+    addressLabel: 'Địa chỉ liên hệ',
     appLabel: 'Thông tin ứng dụng',
     notFound: 'Không tìm thấy trang',
     notFoundLead: 'Đường dẫn bạn truy cập không tồn tại.',
@@ -98,8 +104,11 @@ export const ui: Record<Lang, UiStrings> = {
     read: 'Read document',
     contactTitle: 'Need help?',
     contactLead: 'Reach us through the channels below.',
-    supportLabel: 'General support',
-    privacyLabel: 'Personal data enquiries',
+    companyLabel: 'Company',
+    taxCodeLabel: 'Tax code:',
+    emailLabel: 'Email',
+    phoneLabel: 'Phone',
+    addressLabel: 'Address',
     appLabel: 'App details',
     notFound: 'Page not found',
     notFoundLead: 'The address you opened does not exist.',

@@ -54,25 +54,34 @@ export default function Home() {
           <h2>{t.contactTitle}</h2>
           <p>{t.contactLead}</p>
           <dl className="info-rows">
+            <div className="info-row wide">
+              <dt>{t.companyLabel}</dt>
+              <dd>
+                {lang === 'vi' ? appInfo.companyLegalNameVi : appInfo.companyLegalNameEn}
+                <span className="info-sub">
+                  {t.taxCodeLabel} {appInfo.taxCode}
+                </span>
+              </dd>
+            </div>
             <div className="info-row">
-              <dt>{t.supportLabel}</dt>
+              <dt>{t.emailLabel}</dt>
               <dd>
                 <a href={`mailto:${appInfo.supportEmail}`}>{appInfo.supportEmail}</a>
               </dd>
             </div>
             <div className="info-row">
-              <dt>{t.privacyLabel}</dt>
+              <dt>{t.phoneLabel}</dt>
               <dd>
-                <a href={`mailto:${appInfo.privacyEmail}`}>{appInfo.privacyEmail}</a>
+                <a href={`tel:${appInfo.phone.replace(/\s/g, '')}`}>{appInfo.phone}</a>
               </dd>
             </div>
-            <div className="info-row">
-              <dt>{t.appLabel} · iOS</dt>
-              <dd className="mono">{appInfo.iosBundleId}</dd>
+            <div className="info-row wide">
+              <dt>{t.addressLabel}</dt>
+              <dd>{lang === 'vi' ? appInfo.addressVi : appInfo.address}</dd>
             </div>
-            <div className="info-row">
-              <dt>{t.appLabel} · Android</dt>
-              <dd className="mono">{appInfo.androidPackage}</dd>
+            <div className="info-row wide">
+              <dt>{t.appLabel} · iOS &amp; Android</dt>
+              <dd className="mono">{appInfo.appId}</dd>
             </div>
           </dl>
         </section>
