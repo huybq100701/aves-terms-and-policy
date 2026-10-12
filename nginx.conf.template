@@ -1,0 +1,32 @@
+server {
+    listen 80;
+    server_name _;
+    root /usr/share/nginx/html;
+
+    # Keep redirects relative so they work behind a TLS reverse proxy
+    absolute_redirect off;
+
+    gzip on;
+    gzip_types text/plain text/css application/javascript application/json image/svg+xml;
+
+    location = / {
+        return 302 ${BASE_PATH}/;
+    }
+
+    location = ${BASE_PATH} {
+        return 301 ${BASE_PATH}/;
+    }
+
+    # Hashed build assets can be cached long-term
+    location ${BASE_PATH}/assets/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        try_files $uri =404;
+    }
+
+    # SPA fallback: let react-router handle client-side routes
+    location ${BASE_PATH}/ {
+        add_header Cache-Control "no-cache";
+        try_files $uri ${BASE_PATH}/index.html;
+    }
+}
